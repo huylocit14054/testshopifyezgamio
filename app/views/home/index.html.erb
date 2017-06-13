@@ -15,9 +15,9 @@
   <% @products.each do |product| %>
     <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
   <% end %>
-  <% @customers.each do |customer| %>
+  <% @orders.each do |order| %>
   <li>
-    <%= customer.first_name%>
+    <%= order.id %>
   </li>
   <%end%>
 </ul>
