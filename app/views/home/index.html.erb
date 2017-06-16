@@ -15,9 +15,9 @@
   <% @products.each do |product| %>
     <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
   <% end %>
-  <% @orders.each do |order| %>
+  <% @themes.each do |theme|%>
   <li>
-    <%= order.id %>
+    <%= link_to theme.name , "https://ezgamio.myshopify.com/admin/themes/#{theme.id}}", target: "_top" %>
   </li>
   <%end%>
 </ul>
