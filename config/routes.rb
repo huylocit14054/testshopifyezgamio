@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root :to => 'home#index'
 
   resources :home do
-  	asset do
-  		get 'add_to_theme'
+  	member do
+  		get :add_to_theme
   	end
   end
   mount ShopifyApp::Engine, at: '/'
