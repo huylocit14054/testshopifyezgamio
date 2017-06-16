@@ -17,7 +17,7 @@
   <% end %>
   <% @themes.each do |theme|%>
   <li>
-    <%= link_to theme.name , add_to_theme(theme.id) %>
+    <%= link_to theme.name , controller: "home", action: "add_to_theme(#{theme.id})" %>
   </li>
   <%end%>
 </ul>
