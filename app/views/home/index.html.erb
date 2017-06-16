@@ -17,7 +17,7 @@
   <% end %>
   <% @themes.each do |theme|%>
   <li>
-    <%= link_to theme.name , "https://ezgamio.myshopify.com/admin/themes/#{theme.id}}", target: "_top" %>
+    <%= link_to theme.name , add_to_theme(theme.id) %>
   </li>
   <%end%>
 </ul>
