@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :home do
   	member do
-  		get :add_to_theme
+  		post 'add_to_theme(id)'
   	end
   end
   mount ShopifyApp::Engine, at: '/'
