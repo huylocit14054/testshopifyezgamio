@@ -3,11 +3,11 @@ class HomeController < ShopifyApp::AuthenticatedController
     @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
     @themes = ShopifyAPI::Theme.find(:all)
   end
-  def add_to_theme(id)
+  def add_to_theme
+  		id = param[:id]
   		@asset_theme = ShopifyAPI::Assert.find('Layout/theme.liquid', :params => {:theme_id => id})
   		@asset_theme.value.sub!("<body class='template-{{ template | split: '.' | first }}'>",
   								"<body class='template-{{ template | split: '.' | first }}'<p>#{id}</p>")
   		asset.save
-  		render 'add_to_theme'
   end 
 end
