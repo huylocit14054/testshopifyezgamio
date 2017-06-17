@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :home do
   	member do
-  		post :add_to_theme
+  		match 'home/:id/add_to_theme' => 'home#add_to_theme', as: :home_add_to_theme
   	end
   end
   mount ShopifyApp::Engine, at: '/'
