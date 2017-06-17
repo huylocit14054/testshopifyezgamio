@@ -8,7 +8,7 @@ class HomeController < ShopifyApp::AuthenticatedController
   		@asset_theme = ShopifyAPI::Asset.find('layout/theme.liquid', :params => {:theme_id => id})
   		@asset_theme.value.sub!("</head>",
   								"#{id}</head>")
-  		asset_theme.save
+  		@asset_theme.save
   		render 'add_to_theme'
   end 
 end
