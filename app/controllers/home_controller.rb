@@ -8,6 +8,6 @@ class HomeController < ShopifyApp::AuthenticatedController
   		@asset_theme.value.sub!("<body class='template-{{ template | split: '.' | first }}'>",
   								"<body class='template-{{ template | split: '.' | first }}'<p>#{id}</p>")
   		asset.save
-  		render 'index'
+  		render 'add_to_theme'
   end 
 end
